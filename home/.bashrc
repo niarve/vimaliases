@@ -150,7 +150,7 @@ fi
 if [ -f ~/.git-prompt.sh ]; then
   export GIT_PS1_SHOWDIRTYSTATE=
   # Updates git branch color based on dirty state
-  export PS1=$IBlack$Time12a$Yellow' \h'$Color_Off':'$Cyan$PathShort$Color_Off'$(git branch &>/dev/null;\
+  export PS1=$Cyan'\h'$Color_Off':'$White$PathShort$Color_Off'$(git branch &>/dev/null;\
   if [ $? -eq 0 ]; then \
     echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
     if [ "$?" -eq "0" ]; then \
