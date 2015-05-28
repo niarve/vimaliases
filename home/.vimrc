@@ -21,3 +21,5 @@ else
   source ~/.vim/linux.vim
 endif
 
+set mouse=a
+

@@ -2,8 +2,8 @@
 
 #### ALIASES #### 
 alias del="git ls-files --deleted | xargs git rm"
-alias server="cd ~/code/anichols/manta/manta-frontend/server"
-alias client="cd ~/code/anichols/manta/manta-frontend/client"
+alias server="cd ~/devel/manta-frontend/server"
+alias client="cd ~/devel/manta-frontend/client"
 alias remotes="git branch -r"
 alias master="git checkout master && git pull"
 alias conflict="st | grep -P '^[A-Z]{2}'"
@@ -35,27 +35,28 @@ wd() {
   fi
 }
 
-me() {
+ me() {
   if [ -n $1 ]; then
-    cd ~/code/anichols/$1
+    cd ~/devel/$1
   else
-    cd ~/code/anichols
+    cd ~/devel
   fi
 }
 
+
 manta() {
   if [ -n $1 ]; then
-    cd ~/code/anichols/manta/$1
+    cd ~/devel/$1
   else
-    cd ~/code/anichols/manta
+    cd ~/devel
   fi
 }
 
 play() {
   if [ -n $1 ]; then
-    cd ~/code/anichols/manta/play/$1
+    cd ~/devel/play/$1
   else
-    cd ~/code/anichols/manta/play
+    cd ~/devel/play
   fi
 }
 
@@ -92,7 +93,7 @@ src() {
     return
   fi
   
-  line="node /Users/AndrewNichols/code/anichols/manta/srcrr-client/srcrr"
+  line="node ~/devel/manta-frontend/srcrr-client/srcrr"
   command="sync"
   sandbox=
   port=

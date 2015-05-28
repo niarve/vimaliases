@@ -114,7 +114,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 export TERM=xterm-256color
-export VIMRUNTIME=/usr/share/vim/vim73
+export VIMRUNTIME=/usr/share/vim/vim74
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
@@ -218,8 +218,9 @@ if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
 
-if [ -f ~/code/nvm/nvm.sh ]; then
-  source ~/code/nvm/nvm.sh
+if [ -f ~/.nvm/nvm.sh ]; then
+  source ~/.nvm/nvm.sh
+  nvm use default
 fi
 
 if [ -f ~/.git-prompt.sh ]; then
@@ -232,38 +233,20 @@ export COLUMNS=$COLUMNS
 export NEXUS_USERNAME="manta_ro"
 export NEXUS_PASSWORD="px9tlR2IkNP60Y7D7vb2EpP6pRzdoSE7"
 export PLAY_ENV="dev"
-export LOG_PATH="~/code/anichols/manta/play/logs"
-export MAVEN_HOME="/usr/local/Cellar/maven/3.2.3/libexec"
-export USERNAME="anichols"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home"
-
-if [[ $OSTYPE == darwin* ]]; then
-  export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-  export USERNAME=anichols
-fi
+#export LOG_PATH="~/code/anichols/manta/play/logs"
+#export MAVEN_HOME="/usr/local/Cellar/maven/3.2.3/libexec"
+export USERNAME="niarve"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home"
 
 # added by travis gem
 if [ -e ~/.travis/travis.sh ]; then
   source ~/.travis/travis.sh
 fi
 
-if [[ $OSTYPE == darwin* ]]; then
-  ssh-add ~/.ssh/manta_rsa
-  ssh-add ~/.ssh/anichols_rsa
-fi
-
 bind -r '\C-s'
 stty -ixon
 
 PATH="$PATH:~/activator"
-
-if [[ $OSTYPE == darwin* ]]; then
-  PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/Cellar/grep/2.18/bin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
-
-  # Put sonarqube bins in path
-  PATH="$PATH:$HOME/sonarqube-4.5/bin/macosx-universal-64:$HOME/sonar-runner-2.4/bin"
-fi
 
 PATH="$PATH:$HOME/bin:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
@@ -285,5 +268,5 @@ if [ -f ~/.rvm/scripts/rvm ]; then
 fi
 
 # added by travis gem
-[ -f /Users/AndrewNichols/.travis/travis.sh ] && source /Users/AndrewNichols/.travis/travis.sh
-set -o vi
+[ -f /home/niarve/.travis/travis.sh ] && source /home/niarve/.travis/travis.sh
+# set -o vi
