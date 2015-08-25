@@ -2,8 +2,8 @@
 
 #### ALIASES #### 
 alias del="git ls-files --deleted | xargs git rm"
-alias server="cd ~/devel/manta-frontend/server"
-alias client="cd ~/devel/manta-frontend/client"
+alias server="cd ~/dev/manta-frontend/server"
+alias client="cd ~/dev/manta-frontend/client"
 alias remotes="git branch -r"
 alias master="git checkout master && git pull"
 alias conflict="st | grep -P '^[A-Z]{2}'"
@@ -16,47 +16,73 @@ alias i="npm i --save-dev grunt grunt-contrib-jshint jshint-stylish grunt-mocha-
 alias vim="vim -p"
 
 # Linux specific aliases
-if [[ $OSTYPE != darwin* ]]; then
-  echo "OS is not darwin. Adding Linux aliases."
+if [[ $OSTYPE == linux* ]]; then
+  echo "OS Linux. LEH GO"
+  echo "~~~~~Swerve~~~~~"
   alias ack="ack-grep"
   alias open="xdg-open"
   alias gimme="sudo apt-get install"
 fi
 
-#### GENERIC COMMANDS ####
-wd() {
-  if [ -z $1 ]; then
-    grunt chrome
-  else
-    for ((i=1;i<=$1;i++))
-    do
-      grunt chrome
-    done
-  fi
+#bars() {
+#$ eog <>
+#}
+
+micah() {
+  echo "is nothing like me"
 }
 
- me() {
+andy() {
+  echo "my nigga"
+}
+
+stark() {
+  sleep 2s;
+  echo "winter is coming"
+}
+
+cheech() {
+  sleep $((RANDOM%5));
+  echo "Chong"
+}
+
+OH() {
+  sleep $((RANDOM%2));
+  echo "-IO"
+  echo "GO BUCKS!"
+}
+
+PP() {
+  echo "8====>"
+  echo "hehehehehehe"
+}
+
+nate() {
+  echo "is fucking awesome"
+}
+
+me() {
   if [ -n $1 ]; then
-    cd ~/devel/$1
+    cd ~/dev/$1
   else
-    cd ~/devel
+    cd ~/dev
   fi
 }
 
 
 manta() {
   if [ -n $1 ]; then
-    cd ~/devel/$1
+    cd ~/dev/$1
   else
-    cd ~/devel
+    cd ~/dev
   fi
 }
 
 play() {
   if [ -n $1 ]; then
-    cd ~/devel/play/$1
+    cd ~/dev/play/$1
   else
-    cd ~/devel/play
+    cd ~/dev/play
   fi
 }
 
@@ -93,7 +119,7 @@ src() {
     return
   fi
   
-  line="node ~/devel/manta-frontend/srcrr-client/srcrr"
+  line="node ~/dev/manta-frontend/srcrr-client/srcrr"
   command="sync"
   sandbox=
   port=
