@@ -1,3 +1,3 @@
 # vimaliases
-just my personal vim aliases and awesomeness
+all created by tandrewnichols
 
