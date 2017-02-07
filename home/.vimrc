@@ -1,8 +1,7 @@
 " Bundles
 let g:osName = substitute(system('uname'), "\n", "", "")
-source ~/.vim/vundle.vim
 
-filetype plugin indent on 
+filetype plugin indent on
 let mapleader = "\<Space>"
 
 " Plugins
@@ -22,4 +21,3 @@ else
 endif
 
 set mouse=a
-
