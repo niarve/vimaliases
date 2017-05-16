@@ -255,8 +255,8 @@ if [ -f ~/.git-completion.bash ]; then
   source ~/.git-completion.bash
 fi
 
-eval "$(grunt --completion=bash)"
-ulimit -n 1024
+# eval "$(grunt --completion=bash)"
+# ulimit -n 1024
 
 alias mgrep='grep -rn --exclude=access*.log --exclude-dir=.git --exclude-dir=instrumented --exclude-dir=node_modules --exclude-dir=reports --exclude-dir=public --exclude-dir=dist --exclude-dir=generated --exclude-dir=bower_components --exclude-dir=vendor'
 

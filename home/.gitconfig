@@ -1,6 +1,6 @@
 [user]
 	name = Nathan Iarve
-	email = NIarve@manta.com
+	email = nathan.iarve@crosschx.com
 [diff]
 	tool = vimdiff
 [difftool]
@@ -22,9 +22,15 @@
 [color]
   ui = auto
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/nateiarve/.gitignore
 	autocrlf = input
 [merge]
 	renamelimit = 1946
 [clean]
 	requireForce = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
